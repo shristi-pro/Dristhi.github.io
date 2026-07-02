@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blogs | Dristhi Engineering and Construction</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, var(--navy-light) 100%);
+      padding: 140px 20px 60px;
+      text-align: center;
+      color: var(--white);
+    }
+    .page-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .page-hero h1 span {
+      color: var(--gold);
+    }
+    .page-hero p {
+      color: var(--grey-light);
+      font-size: 1.1rem;
+    }
+
+    .blogs-section {
+      background: var(--off-white);
+      padding: 60px 20px;
+      min-height: 400px;
+    }
+    
+    .blogs-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .blogs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .blog-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(27,42,107,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(27,42,107,0.15);
+    }
+    .blog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .blog-card-body {
+      padding: 20px;
+    }
+    .blog-date {
+      font-size: 0.82rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .blog-card-body h3 {
+      color: var(--navy);
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .blog-card-body p {
+      color: var(--grey);
+      font-size: 0.93rem;
+      line-height: 1.6;
+    }
+    .no-content {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--grey);
+    }
+    .no-content h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: var(--navy);
+    }
+  </style>
+</head>
+<body>
+  
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="Images/logo.png" 
+           alt="Dristhi Engineering Logo" 
+           style="height: 80px; width: auto; max-width: 240px; object-fit: contain; 
+                  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15)); transition: all 0.3s ease;"
+           class="nav-logo-img">
+      <div class="nav-logo-text">
+        <span>Dristhi Engineering</span>
+        <span>and Construction Pvt. Ltd.</span>
+      </div>
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="hamburger"></span>
+    </button>
+
+    <ul class="nav-links">
+      <li><a href="index.html#home" class="nav-item">Home</a></li>
+      <li><a href="index.html#about" class="nav-item">About</a></li>
+      <li><a href="index.html#services" class="nav-item">Services</a></li>
+      <li><a href="projects.html" class="nav-item">Projects</a></li>
+      <li><a href="blogs.html" class="nav-item">Blogs</a></li>
+      <li><a href="index.html#why" class="nav-item">Why Us</a></li>
+      <li><a href="index.html#team" class="nav-item">Team</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <h1>Our <span>Blogs</span></h1>
+    <p>Insights, updates and stories from Dristhi Engineering</p>
+  </section>
+
+  <!-- BLOGS -->
+  <section class="blogs-section">
+    <div class="blogs-container">
+      <div class="blogs-grid" id="blogsGrid"></div>
+      <div class="no-content" id="noBlogs" style="display:none;">
+        <h3>No Blogs Yet</h3>
+        <p>Blog posts will appear here once added from the admin panel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="Images/Dristi Engineering C - Logo.png" alt="Dristi Engineering Logo">
+        <p>Dristhi Engineering and Construction Pvt. Ltd. — delivering quality engineering and construction services across Nepal with integrity and precision.</p>
+        <span class="pan-badge">PAN: 623592490</span>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#team">Our Team</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="index.html#services">Structural Engineering</a></li>
+          <li><a href="index.html#services">Architectural Design</a></li>
+          <li><a href="index.html#services">Construction Management</a></li>
+          <li><a href="index.html#services">Site Engineering</a></li>
+          <li><a href="index.html#services">Cost Estimation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact Us</h5>
+        <div class="footer-contact-item">
+          <span>📍</span>
+          <span>Kamala Municipality-06, Dhanusha, Nepal</span>
+        </div>
+        <div class="footer-contact-item">
+          <span>📞</span>
+          <span><a href="tel:+9779860838835">+977 9860838835</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <span>✉️</span>
+          <span><a href="mailto:dristhiengineering@gmail.com">dristhiengineering@gmail.com</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Dristhi Engineering and Construction Pvt. Ltd. All rights reserved.
+        | Developed by <a href="https://shristighalan.com.np" target="_blank">Shristi Ghalan</a>
+      </p>
+      <span class="pan-badge">Kamala Municipality-06, Dhanusha</span>
+    </div>
+  </footer>
+
+  <script>
+    const grid = document.getElementById('blogsGrid');
+    const noBlogs = document.getElementById('noBlogs');
+    const blogs = JSON.parse(localStorage.getItem('drishti_blogs') || '[]');
+
+    if (blogs.length === 0) {
+      noBlogs.style.display = 'block';
+    } else {
+      blogs.forEach(b => {
+        const card = document.createElement('div');
+        card.className = 'blog-card';
+        card.innerHTML = `
+          ${b.image ? `<img src="${b.image}" alt="${b.title}">` : ''}
+          <div class="blog-card-body">
+            <div class="blog-date">${b.date || ''}</div>
+            <h3>${b.title}</h3>
+            <p>${b.description}</p>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Hamburger menu
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle?.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', navLinks.classList.contains('open'));
+    });
+  </script>
+
+</body>
+</html>
