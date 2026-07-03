@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login | Dristhi Engineering</title>
+  <style>
+    :root {
+      --navy: #1B2A6B;
+      --navy-dark: #111d50;
+      --navy-light: #2a3d8f;
+      --gold: #D4A017;
+      --gold-light: #f0c040;
+      --grey: #6B7280;
+      --grey-light: #8A9099;
+      --white: #ffffff;
+      --off-white: #F8F9FC;
+      --dark-text: #1a1a2e;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, var(--navy-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .login-box {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      text-align: center;
+    }
+
+    .login-box img {
+      height: 70px;
+      width: auto;
+      margin-bottom: 16px;
+      object-fit: contain;
+    }
+
+    .login-box h2 {
+      color: var(--navy);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .login-box p {
+      color: var(--grey);
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e0e4f0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: var(--dark-text);
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus {
+      border-color: var(--navy);
+    }
+
+    .error-msg {
+      background: #fff0f0;
+      color: #c0392b;
+      border: 1px solid #f5c6cb;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+      display: none;
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.3s;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-login:hover { opacity: 0.9; }
+
+    .gold-line {
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin: 0 auto 24px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: var(--grey);
+      text-decoration: none;
+    }
+
+    .back-link:hover { color: var(--navy); }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <img src="../Images/Dristi Engineering C - Logo.png" alt="Dristhi Logo">
+    <h2>Admin Panel</h2>
+    <div class="gold-line"></div>
+    <p>Sign in to manage projects and blogs</p>
+
+    <div class="error-msg" id="errorMsg">Invalid username or password.</div>
+
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter username" />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter password" />
+    </div>
+
+    <button class="btn-login" onclick="handleLogin()">Login</button>
+
+    <a href="../index.html" class="back-link">← Back to Website</a>
+  </div>
+
+  <script>
+    function handleLogin() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const errorMsg = document.getElementById('errorMsg');
+
+      if (username === 'Dristhi' && password === 'Dristhi@!123') {
+        sessionStorage.setItem('drishti_admin', 'true');
+        window.location.href = 'dashboard.html';
+      } else {
+        errorMsg.style.display = 'block';
+      }
+    }
+
+    // Allow Enter key to login
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') handleLogin();
+    });
+
+    // Redirect if already logged in
+    if (sessionStorage.getItem('drishti_admin') === 'true') {
+      window.location.href = 'dashboard.html';
+    }
+  </script>
+
+</body>
+</html>
